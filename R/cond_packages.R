@@ -11,6 +11,14 @@
 
 cond_packages <- function(packages) {
   
+  # check to make sure packages is a list
+  
+  if ( is.list( packages ) == FALSE) {
+    cat( "The argument ",
+         shQuote( "packages" , type = 'cmd'), 
+         " must be a vector or list.", sep="")
+  } else {}
+  
   # generate packages_installed a df representing packages already on machine.
   
   packages_installed <- as.data.frame( installed.packages()[,c(1,3:4)] )
